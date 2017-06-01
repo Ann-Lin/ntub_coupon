@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>折價券</h1>
+
+<%= link_to '新增折扣碼', new_coupon_code_path, class: 'btn btn-primary' %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>代碼</th>
+      <th>折扣金額</th>
+      <th>有效日期</th>
+      <th>可多次使用</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coupon_codes.each do |coupon_code| %>
+      <tr>
+        <td><%= coupon_code.code %></td>
+        <td><%= coupon_code.discount %></td>
+        <td>
+          <%= coupon_code.begin_at %> ~
+          <%= coupon_code.end_at %>
+        </td>
+        <td><%= coupon_code.allow_multiple_usage %></td>
+        <td>
+          <%= link_to 'Edit', edit_coupon_code_path(coupon_code) %>
+          <%= link_to 'Destroy', coupon_code, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

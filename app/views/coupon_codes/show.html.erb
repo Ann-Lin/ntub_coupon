@@ -1,0 +1,27 @@
+<p>
+  <strong>Code:</strong>
+  <%= @coupon_code.code %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @coupon_code.discount %>
+</p>
+
+<p>
+  <strong>Begin at:</strong>
+  <%= @coupon_code.begin_at %>
+</p>
+
+<p>
+  <strong>End at:</strong>
+  <%= @coupon_code.end_at %>
+</p>
+
+<p>
+  <strong>Allow multiple usage:</strong>
+  <%= @coupon_code.allow_multiple_usage %>
+</p>
+
+<%= link_to 'Edit', edit_coupon_code_path(@coupon_code) %> |
+<%= link_to 'Back', coupon_codes_path %>

@@ -1,0 +1,15 @@
+<%= simple_form_for(@coupon_code) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :code, label: false, placeholder: '折扣代碼，若無填寫則自動產生' %>
+    <%= f.input :discount, label: false, placeholder: '折扣金額' %>
+    <%= f.input :begin_at, label: "起始日期" %>
+    <%= f.input :end_at, label: "結束日期" %>
+    <%= f.input :allow_multiple_usage, label: "允許多次使用" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

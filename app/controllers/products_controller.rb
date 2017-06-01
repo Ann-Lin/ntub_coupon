@@ -1,28 +1,20 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy, :apply_coupon]
 
-  # GET /products
-  # GET /products.json
   def index
     @products = Product.all
   end
 
-  # GET /products/1
-  # GET /products/1.json
   def show
   end
 
-  # GET /products/new
   def new
     @product = Product.new
   end
 
-  # GET /products/1/edit
   def edit
   end
 
-  # POST /products
-  # POST /products.json
   def create
     @product = Product.new(product_params)
 
@@ -37,8 +29,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /products/1
-  # PATCH/PUT /products/1.json
   def update
     respond_to do |format|
       if @product.update(product_params)
@@ -51,13 +41,20 @@ class ProductsController < ApplicationController
     end
   end
 
-  # DELETE /products/1
-  # DELETE /products/1.json
   def destroy
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def apply_coupon
+    coupon = CouponCode.find_by(code: params[:product][:coupon_code])
+    if coupon
+      @product.apply_coupon(coupon)
+    else
+      redirect_to root_path, notice: "折價代碼無效"
     end
   end
 

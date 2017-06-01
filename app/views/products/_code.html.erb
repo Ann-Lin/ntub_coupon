@@ -1,0 +1,5 @@
+<%= simple_form_for product, method: :get, url: apply_coupon_product_path(product) do |f| %>
+  <h3>使用折扣碼</h3>
+  <%= f.input :coupon_code, label: false, placeholder: '請填寫折扣代碼' %>
+  <%= f.submit "使用", class: 'btn btn-success' %>
+<% end %>

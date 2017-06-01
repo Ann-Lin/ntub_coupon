@@ -1,0 +1,14 @@
+<h1>
+  <%= @product.title %>
+</h1>
+
+<p>
+  <%= @product.description %>
+</p>
+
+<%= render 'code', product: @product %>
+
+<p>
+  <strong>售價:</strong>
+  <%= @product.price %>元
+</p>

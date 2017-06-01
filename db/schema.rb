@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170601224647) do
+ActiveRecord::Schema.define(version: 20170601232147) do
 
   create_table "coupon_codes", force: :cascade do |t|
     t.string "code"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170601224647) do
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "coupon_code_id"
   end
 
 end

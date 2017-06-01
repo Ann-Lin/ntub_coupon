@@ -11,6 +11,9 @@
   <%= @product.price %>元
 </p>
 
+<%= render 'code', product: @product %>
+
+<hr />
 <div class="btn-group" role="group">
   <%= link_to '編輯', edit_product_path(@product), class: 'btn btn-default' %>
   <%= link_to '回上頁', products_path, class: 'btn btn-default' %>

@@ -1,28 +1,20 @@
 class CouponCodesController < ApplicationController
   before_action :set_coupon_code, only: [:show, :edit, :update, :destroy]
 
-  # GET /coupon_codes
-  # GET /coupon_codes.json
   def index
     @coupon_codes = CouponCode.all
   end
 
-  # GET /coupon_codes/1
-  # GET /coupon_codes/1.json
   def show
   end
 
-  # GET /coupon_codes/new
   def new
     @coupon_code = CouponCode.new
   end
 
-  # GET /coupon_codes/1/edit
   def edit
   end
 
-  # POST /coupon_codes
-  # POST /coupon_codes.json
   def create
     @coupon_code = CouponCode.new(coupon_code_params)
 
@@ -37,8 +29,6 @@ class CouponCodesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /coupon_codes/1
-  # PATCH/PUT /coupon_codes/1.json
   def update
     respond_to do |format|
       if @coupon_code.update(coupon_code_params)
@@ -51,8 +41,6 @@ class CouponCodesController < ApplicationController
     end
   end
 
-  # DELETE /coupon_codes/1
-  # DELETE /coupon_codes/1.json
   def destroy
     @coupon_code.destroy
     respond_to do |format|

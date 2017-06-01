@@ -3,12 +3,14 @@
   <head>
     <title>Coupon</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <p id="notice"><%= notice %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>
